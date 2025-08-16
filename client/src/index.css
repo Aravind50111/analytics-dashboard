@@ -1,0 +1,90 @@
+* { box-sizing: border-box; }
+body { margin: 0; font-family: Inter, system-ui, Arial; background: #0b1220; color: #e6e8ef; }
+a { color: inherit; }
+.container { max-width: 1000px; margin: 24px auto; padding: 16px; }
+.card { background: #121a2a; border: 1px solid #1d2942; border-radius: 12px; padding: 16px; margin-bottom: 16px; }
+.row { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
+.btn { padding: 10px 16px; border: 0; border-radius: 8px; cursor: pointer; font-weight: 600; }
+.btn.primary { background: #4e7cff; color: white; }
+.btn.alt { background: #22c55e; color: #06121f; }
+.badge { display:inline-block; padding:4px 8px; border-radius:999px; background:#1d2942; color:#9fb3ff; font-size:12px; }
+.grid { display:grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.label { font-size: 12px; color: #9aa6c0; }
+.input, .textarea, .select { width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #24314f; background: #0e1626; color: #e6e8ef; }
+.canvas-wrap { position: relative; width: 100%; aspect-ratio: 16/9; border: 1px dashed #24314f; border-radius: 12px; overflow: hidden; background: #0e1626; }
+.overlay { position:absolute; inset:0; }
+.table { width: 100%; border-collapse: collapse; }
+.table td, .table th { padding: 8px; border-bottom: 1px solid #1d2942; text-align: left; }
+.small { font-size: 12px; color: #9aa6c0; }
+.tabbar { display:flex; gap:8px; margin-bottom:16px;}
+.tab { padding:8px 12px; border-radius:8px; background:#0e1626; border:1px solid #1d2942; cursor:pointer; }
+.tab.active { background:#1d2942; }
+
+
+/* ====== HIGH-CONTRAST / READABILITY UPGRADES ====== */
+
+/* Darker page, brighter cards/text */
+body { background: #0a0f1d; color: #f2f4f8; }
+.card { background: #0f1730; border: 1px solid #2a3a66; }
+.small, .label { color: #b9c6e4; }
+
+/* Make the top tab bar sticky and clearer */
+.tabbar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  padding: 8px;
+  margin: -8px -8px 16px -8px;
+  background: rgba(10,15,29,0.85);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid #2a3a66;
+  gap: 12px;
+}
+
+/* Bigger, clearer tabs */
+.tab {
+  font-size: 16px;
+  font-weight: 600;
+  padding: 10px 16px;
+  border-radius: 10px;
+  border: 2px solid #2a3a66;
+  background: #0b1226;
+  color: #e5ecff;
+  box-shadow: 0 1px 0 rgba(255,255,255,0.03) inset;
+  transition: transform .05s ease, background .15s, border-color .15s;
+}
+.tab:hover { background: #12214a; }
+.tab:active { transform: translateY(1px); outline: none; }
+.tab:focus-visible { outline: 3px solid #8ab4ff; }
+
+/* Super obvious active tab */
+.tab.active {
+  background: #345cff;
+  color: #06121f;
+  border-color: #5f80ff;
+  box-shadow: 0 0 0 3px rgba(95,128,255,0.25);
+}
+
+/* Buttons: larger & higher contrast */
+.btn { font-size: 16px; padding: 12px 18px; }
+.btn.primary { background: #5b7cff; }
+.btn.primary:hover { filter: brightness(1.1); }
+.btn.alt { background: #23d17a; }
+.btn:focus-visible { outline: 3px solid #8ab4ff; }
+
+/* Badge: brighter */
+.badge { background: #1f2f66; color: #cfe0ff; }
+
+/* Demo area: thicker border to see bounds clearly */
+.canvas-wrap {
+  border: 2px dashed #3b4f86;
+  background: radial-gradient(1200px 400px at 50% 0%, rgba(52,92,255,0.08), transparent);
+}
+
+/* Headings: bump size for readability */
+h1 { font-size: 40px; line-height: 1.15; }
+h2 { font-size: 28px; }
+h3 { font-size: 20px; }
+
+/* Table text a bit larger */
+.table td, .table th { font-size: 15px; }
